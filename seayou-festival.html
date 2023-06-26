@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SeaYouFestival</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+				<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+				<link rel="stylesheet" href="stylesheet/style.css" charset="utf-8">
+
+
+	</head>
+
+<body>
+		<header class="header">
+
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
+			</div>
+
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
+
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
+
+		</header>
+
+<!--CIRCLE-->
+	 	<div class="circle" style="cursor: pointer;">
+	 		<a class="overlay" href="index.html" title="mika"></a>
+	 	</div>
+
+		<svg>
+			<filter id="wavy">
+				<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+					<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+				</feTurbulence>
+				<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+			</filter>
+		</svg>
+
+<!--BACKGROUND-->
+		<div  class="title">
+			<h4>BRANDING<br>AND<br> REDESIGN</h4>
+		</div>
+
+<!--INHALT-->
+
+		 <section class="first">
+		 			<img class="img-first" src="Projects-Images\06-SeaYouFestival\SEA YOU-Branding-01.png" alt="Branding">
+			</section>
+
+<div class="row">
+		<div class="column left" id="text-body-first">
+				<h2>SEA YOU FESTIVAL</h2>
+				<p>Sea You is one of the most beautiful beach festivals in Germany. Located at the Tunisee in Freiburg,
+					a unique festival landscape awaits the visitors with the "Beach Republic". The line-up usually features
+					the greats of electronic music - from classic to progressive.<br></p>
+		</div>
+		<div class="column right" id="side-text-first">
+				<p>
+					Client
+						<br>sea you festival<br><br>
+					Credits
+						<br>DAUBERMANN – Consultancy
+						<br>Lina Dittmar
+						<br>Michaela Kappes
+						<br><br>
+					Year
+						<br>OCT 2021 – JAN 2022
+						<br>5th Semester
+				</p>
+		</div>
+</div>
+
+
+<!--zick zack pictures-->
+		<section class="second">
+
+		 	<div class="img-box">
+		 		<img class="img2" src="Projects-Images\06-SeaYouFestival\SEA YOU - Farbe Online-02.png" alt="Colors">
+		 		<img src="Projects-Images\06-SeaYouFestival\Sea You -Glued-Poster-Mockups-03.jpg" alt="Poster">
+				<img class="img4" src="Projects-Images\06-SeaYouFestival\Sea YOU - Font - 04.jpg" alt="Font">
+				<img class="img5" src="Projects-Images\06-SeaYouFestival\SEA YOU - Tickets - 05.jpg" alt="Tickets">
+				<img src="Projects-Images\06-SeaYouFestival\SEA YOU - Icons - 06.jpg" alt="Icons">
+		 	</div>
+
+			<div class="description-1">
+				<h3>REDESIGN<br></h3>
+					<p>With the brand refresh, the Sea You Festival is repositioning itself in terms of a holistic brand profiling.
+						The extraordinary profile is not only visible in the communication - but the unique "Beach Republic Feeling"
+						is also medially transported and experienced with the new, activating visual design. At the same time,
+						the appearance full of character creates a strong and independent positioning in the grown festival landscape.<br><br></p>
+		 	</div>
+
+		 	<div class="img-box">
+		 		<img class="img7" src="Projects-Images\06-SeaYouFestival\SEA YOU - Merch - 07.jpg" alt="Merch">
+		 		<img src="Projects-Images\06-SeaYouFestival\SEA YOU - Online Grafiken Banner-08.png" alt="Graphic Ad Billboard">
+		 		<img class="img7" src="Projects-Images\06-SeaYouFestival\SEA YOU - Bildstil - 09.jpg" alt="Photo Style">
+		 		<img src="Projects-Images\06-SeaYouFestival\SEA YOU - Insta - 10.jpg" alt="Instagram">
+		 		<img class="img6" src="Projects-Images\06-SeaYouFestival\SEA YOU - ID Card Holder - 11.jpg" alt="ID Card Holder">
+		 		<img src="Projects-Images\06-SeaYouFestival\SEA YOU - Einlassbndchen - 12.png" alt="Entrace-Braclette">
+				<img src="Projects-Images\06-SeaYouFestival\SEA YOU - Foodtruck- 13.jpg" alt="Foodtruck">
+			</div>
+
+		</section>
+
+		<section class="switch-light">
+			<div class="switch">
+				<p> solar </p>
+					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+				<p> lunar </p>
+			</div>
+		</section>
+
+
+
+		<script>
+        	// check for saved 'lightMode' in localStorage
+			let lightMode = localStorage.getItem('lightMode');
+
+			const lightModeToggle = document.querySelector('#light-mode-toggle');
+
+			const enableLightMode = () => {
+			  // 1. Add the class to the body
+			  document.body.classList.add('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', 'enabled');
+			}
+
+			const disableLightMode = () => {
+			  // 1. Remove the class from the body
+			  document.body.classList.remove('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', null);
+			}
+
+			// If the user already visited and enabled lightMode
+			// start things off with it on
+			if (lightMode === 'enabled') {
+			  enableLightMode();
+			}
+
+			// When someone clicks the button
+			lightModeToggle.addEventListener('click', () => {
+			  // get their lightMode setting
+			  lightMode = localStorage.getItem('lightMode');
+
+			  // if it not current enabled, enable it
+			  if (lightMode !== 'enabled') {
+			    enableLightMode();
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
+			  }
+			});
+        </script>
+	</body>
+</html>

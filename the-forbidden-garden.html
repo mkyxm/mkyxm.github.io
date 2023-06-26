@@ -1,450 +1,104 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
-
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+		<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+		<link rel="stylesheet" href="stylesheet/main.css" charset="utf-8">
+
 
 		<title>the forbidden garden</title>
-
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
-		<style>
-
-		 	html{
-		 		width: 100%;
-		 	}
-
-		 	body{
-		 		background-color: var(--background);
-		 		 color: var(--foreground);
-		 	}
-
-		 	::-webkit-scrollbar{
-		 		width: 8px;
-		 	}
-
-		 	::-webkit-scrollbar-thumb{
-		 		background: linear-gradient(transparent,var(--clr-secondary));
-		 		border-radius: 6px;
-		 	}
-
-		 	::-webkit-scrollbar-thumb:hover{
-		 		background: linear-gradient(transparent,#009900);
-		 		border-radius: 6px;
-		 	}
-
-
-
-		 	.header a{
-		 			text-decoration: none;
-		 			color: var(--clr-primary);
-		 	}
-
-		 	.header{
-		 		position: fixed;
-				top: 10px;
-		 		left: 10%;
-		 		right: 0;
-		 		will-change: transform;
-		 		z-index: 100;
-		 	}
-
-			.column {
-				float: left;
-				width: 31%;
-				margin-top: 10px;
-				font-family: Now, Hiragion Kaku Gothic ProN, sans-serif;
-	 			font-size:15px;
-		 		line-height: 16px;
-		 		color: var(--clr-primary);
-		 	}
-
-			.header:after {
-				content: "";
-				display: table;
-				clear: both;
-			}
-
-
-/*home circle*/
-			 .circle{
-			 	position: fixed;
-			 	width: 75px;
-				height: 75px;
-			 	filter: url(#wavy) blur(1px);
-			 	top: 8px;
-				right: 5%;
-				will-change: transform;
-		 		z-index: 1000;
-			 }
-
-			.circle:before{
-		 		content: '';
-		 		position: absolute;
-			 	top: 10px;
-			 	left: 10px;
-				right: 10px;
-				bottom: 10px;
-				border: 20px solid var(--clr-secondary);
-				box-shadow: 
-		 					inset 0 0 50px var(--clr-secondary);
-			 	border-radius: 50%;
-			 	-webkit-box-reflect: below 10px linear-gradient(transparent,transparent,#0002);
-			 }
-
-			 .circle:after{
-				content: '';
-				position: absolute;
-				top: 10px;
-				left: 10px;
-				right: 10px;
-				bottom: 10px;
-				border: 20px solid var(--clr-secondary);
-				box-shadow: 0 0 13px var(--clr-secondary),
-							inset 0 0 20px var(--clr-secondary);
-				border-radius: 50%;	
-		 	}
-
-			 	@keyframes animate{
-			 		0%
-			 		{
-			 			box-shadow: 0 0 5px var(--clr-secondary),
-			 					inset 0 0 5px var(--clr-secondary);
-			 				filter: hue-rotate(0deg);
-			 		}
-			 		20%
-			 		{
-			 			box-shadow: 0 0 6px var(--clr-secondary),
-			 					inset 0 0 6px var(--clr-secondary);
-			 		}
-			 		40%
-			 		{
-			 			box-shadow: 0 0 4px var(--clr-secondary),
-			 					inset 0 0 4px var(--clr-secondary);
-			 		}
-			 		60%
-			 		{
-			 			box-shadow: 0 0 8px var(--clr-secondary),
-			 					inset 0 0 8px var(--clr-secondary);
-			 		}
-			 		80%
-			 		{
-			 			box-shadow: 0 0 10px var(--clr-secondary),
-			 					inset 0 0 10px var(--clr-secondary);
-			 		}
-			 		100%
-			 		{
-			 			box-shadow: 0 0 5px var(--clr-secondary),
-			 					inset 0 0 5px var(--clr-secondary);
-			 				filter: hue-rotate(360deg);
-			 		}
-			 	}
-
-			 	svg{
-			 		width: 0;
-			 		height: 0;
-			 	}
-
-			 	.overlay{
-			 		position: absolute;
-			 		display: block;
-			 		width: 100%;
-			 		height: 100%;
-			 		cursor: pointer;
-			 		z-index: 1001;
-			 	}
-/*ende home circle*/
-
-
-/*big circle*/
-				 .circle2{
-			 		margin-left: 50%;
-			 		margin-right: auto;
-			 		width: 600px;
-			 		height: 600px;
-			 		filter: url(#wavy) blur(1px);
-			 		margin: auto;
-			 		align-self: center;
-			 		z-index: -1;
-			 	}
-
-
-			 	.circle2:before{
-			 		content: '';
-			 		position: absolute;
-			 		top: 100px;
-			 		left: 100px;
-			 		right: 100px;
-			 		bottom: 100px;
-			 		border: 20px solid var(--clr-secondary);
-			 		box-shadow: 
-			 					inset 0 0 50px var(--clr-secondary);
-			 		border-radius: 50%;
-			 		-webkit-box-reflect: below 10px linear-gradient(transparent,transparent,#0002);
-			 		
-			 	}
-
-			 	.circle2:after{
-			 		content: '';
-			 		position: absolute;
-			 		top: 100px;
-			 		left: 100px;
-			 		right: 100px;
-			 		bottom: 100px;
-			 		border: 20px solid var(--clr-secondary);
-			 		box-shadow: 0 0 13px var(--clr-secondary),
-			 					inset 0 0 20px var(--clr-secondary);
-			 		border-radius: 50%;
-			 		
-			 	}
-
-			 	@keyframes animate{
-			 		0%
-			 		{
-			 			box-shadow: 0 0 50px var(--clr-secondary),
-			 					inset 0 0 50px var(--clr-secondary);
-			 				filter: hue-rotate(0deg);
-			 		}
-			 		20%
-			 		{
-			 			box-shadow: 0 0 60px var(--clr-secondary),
-			 					inset 0 0 60px var(--clr-secondary);
-			 		}
-			 		40%
-			 		{
-			 			box-shadow: 0 0 40px var(--clr-secondary),
-			 					inset 0 0 40px var(--clr-secondary);
-			 		}
-			 		60%
-			 		{
-			 			box-shadow: 0 0 80px var(--clr-secondary),
-			 					inset 0 0 80px var(--clr-secondary);
-			 		}
-			 		80%
-			 		{
-			 			box-shadow: 0 0 100px var(--clr-secondary),
-			 					inset 0 0 100px var(--clr-secondary);
-			 		}
-			 		100%
-			 		{
-			 			box-shadow: 0 0 50px var(--clr-secondary),
-			 					inset 0 0 50px var(--clr-secondary);
-			 				filter: hue-rotate(360deg);
-			 		}
-
-			 	}
-
-			 	.svg2{
-			 		width: 0;
-			 		height: 0;
-			 	}
-
-/*ENDE!!! big circle EMDE!!!*/
-
-
-				.canvas-wrapper{
-					width: 100%;
-					margin-top: 120px;
-					z-index: -1;
-					top: 1em;
-					left: 1em;
-				}
-
-				img{
-					width: 45%;
-				}
-
-
-
-
-	:focus{
-		outline: none;
-	}			
-									
-			:root {
-			  --clr-light: #f2f3f4;
-			  --clr-dark: #000;
-			  --clr-primary: #f2f3f4;
-			  --clr-secondary: #01FF00;
-			  --clr-accent: #ccc;
-
-			  --background: var(--clr-dark);
-			  --foreground: var(--clr-light);
-
-			 --fill: #46008c;
-			}
-
-			.lightmode {
-			  --clr-light:#f2f3f4;
-			  --clr-dark: #000;
-			  --clr-primary: #000;
-			  --clr-secondary: #46008c;
-			  --clr-accent: #ccc;
-
-			 --background: var(--clr-light);
-			 --foreground: var(--clr-dark);
-
-			 --fill: #01FF00;
-			}
-
-			.switch{
-				position: fixed;
-			 	z-index: 1000;
-			 	bottom: 0.4em;
-			 	margin-left: 45%;
-			}
-
-			.switch p{
-				line-height: 0;
-				font-family: Now, Hiragion Kaku Gothic ProN, sans-serif;
-			 	font-size:13px;
-			 	color: var(--clr-primary);
-			}
-
-			.light-mode-toggle {
-			  color: var(--fill);
-			  border: 1px solid currentColor;
-			  background: transparent;
-			  cursor: pointer;
-			  border-radius: 27px;
-			  width: 27px;
-			  height: 27px;
-			}
-
-			.light-mode-toggle:hover {
-			  color: var(--fill);
-			  background-color: var(--fill);
-			}
-
-				@media screen and (max-width: 767px) {
-						.header{
-							position: absolute;	
-						}
-
-						.column {
-							width: 100%;
-						}
-
-						.column p{
-							margin-top: 10px;
-							margin-bottom: 10px;
-						}
-
-						.column2 {
-							width: 100%;
-						}
-
-						.section-white-space{
-					 		height: 140px;
-					 	}
-				}	
-				@media screen and (max-width:481px) {
-						.header{
-							position: absolute;	
-						}
-
-						.column {
-							width: 100%;
-						}
-
-						.column p{
-							margin-top: 10px;
-							margin-bottom: 10px;
-						}
-
-						.column2 {
-							width: 100%;
-						}
-
-						.section-white-space{
-					 		height: 140px;
-					 	}
-				}
-				@media screen and (min-width: 1300px){
-				}
-
-
-		</style>
-					
 	</head>
 
-		 <body>
+	<body>
+	 	<header class="header">
 
-		 	<header class="header">
-
-		 			<div class="column">
-		 				<p>Michaela Kappes<br>Germany</p>
-		 			</div>
-
-		 			<div class="column">
-		 				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
-		 			</div>
-
-
-		 		
-		 	</header>
-
-		 
-		 	<div class="circle" style="cursor: pointer;">
-		 		<a class="overlay" href="index.html" title="mika"></a>
-		 	</div>
-
-				<svg>
-					<filter id="wavy">
-						<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
-							<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
-						</feTurbulence>
-						<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
-					</filter>
-				</svg>
-			
-		 		
-
-<!--big circle in gthe middle -->
-
-		 			<div class="circle2">
-						<svg class="svg2">
-							<filter id="wavy2">
-								<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
-									<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
-								</feTurbulence>
-								<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
-							</filter>
-						</svg>
-					</div>
-
-<!--this should be the images for dragging-->
-
-		<div class="canvas-wrapper">
-
-			<div class="img1">
-				<p>this site is still under construction</p>
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
 			</div>
+
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
+
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
+
+	 	</header>
+
+
+	 	<div class="circle" style="cursor: pointer;">
+	 		<a class="overlay" href="index.html" title="mika"></a>
+	 	</div>
+
+		<svg>
+			<filter id="wavy">
+				<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+					<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+				</feTurbulence>
+				<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+			</filter>
+		</svg>
+
+
+
+		<div class="section-white-space"></div>
+
+
+		<div>
+
+					<!--comment-->		
+					<section class="error">
+						<div class="Undertitle"> 404</div>
+						<h1 class="heading">eh, construction dust</h1>
+					</section>
 
 
 
 		</div>
 
 
+		 <div class="footer">
+			<div class="column2">
+				<a href="https://www.instagram.com/mkyxm" class="fa fa-instagram" target="_blank"></a>
+					
+				<a href="https://www.behance.net/michaelakappes" class="behance" target="_blank">Be</a>
 
-
-		 	<div class="switch">	
-				<p> solar </p>
-					<button id="light-mode-toggle" class="light-mode-toggle"></button>
-				<p> lunar </p>
 			</div>
 
+			<div class="column2">
+				<p>Mika a freelance<br>Media Designer</p>
+			</div>
 
+			<div class="column2">
+				<p>feel free to <a href='mailto:kappes.michaela@gmx.com'style="color: var(--clr-secondary)">contact me.</a>
+				</p>
+			</div>
+		</div>
 
+	 	<div class="terms">
+	 		<a href="imprint.html" title="imprint" class="imprint"><p>imprint</p></a>
+	 		<a href="imprint.html" title="data-policy" class="data-policy"><p>data policy</p></a>
+	 	</div>
 
-
+		<section class="switch-light">
+			<div class="switch">
+				<p> light </p>
+					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+				<p> dark</p>
+			</div>
+		</section>
 
         <script>
           // check for saved 'lightMode' in localStorage
-			let lightMode = localStorage.getItem('lightMode'); 
+			let lightMode = localStorage.getItem('lightMode');
 
 			const lightModeToggle = document.querySelector('#light-mode-toggle');
 
@@ -458,10 +112,10 @@
 			const disableLightMode = () => {
 			  // 1. Remove the class from the body
 			  document.body.classList.remove('lightmode');
-			  // 2. Update lightMode in localStorage 
+			  // 2. Update lightMode in localStorage
 			  localStorage.setItem('lightMode', null);
 			}
-			 
+
 			// If the user already visited and enabled lightMode
 			// start things off with it on
 			if (lightMode === 'enabled') {
@@ -471,21 +125,16 @@
 			// When someone clicks the button
 			lightModeToggle.addEventListener('click', () => {
 			  // get their lightMode setting
-			  lightMode = localStorage.getItem('lightMode'); 
-			  
+			  lightMode = localStorage.getItem('lightMode');
+
 			  // if it not current enabled, enable it
 			  if (lightMode !== 'enabled') {
 			    enableLightMode();
-			  // if it has been enabled, turn it off  
-			  } else {  
-			    disableLightMode(); 
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
 			  }
 			});
         </script>
-
-		 
-
-			 		
-		 </body>
-	
+	</body>
 </html>

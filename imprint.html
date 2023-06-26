@@ -3,291 +3,74 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>mika portfolio/palatul-cultural</title>
+		<title>imprint</title>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond"/>
+		<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+		<link rel="stylesheet" href="stylesheet/style.css" charset="utf-8">
+
 		<style>
-		 	html{
-		 		max-width: 100%;
-    			overflow-x: hidden;
-		 	}
 
-		 	body{
-		 		background-color: var(--background);
-		 		color: var(--foreground);
-		 	}
+		.impressum{
+			margin-top: 200px;
+			margin-bottom: 200px;
+			padding-left: 90px;
+			padding-right: 90px;
+			width: 70vw;
+		}
 
-		 	::-webkit-scrollbar{
-		 		width: 8px;
-		 	}
+		.impressum p{
+			font-family: 'IBM Plex Mono',monospace;
+						color: var(--clr-primary);
+		}
 
-		 	::-webkit-scrollbar-thumb{
-		 		background: linear-gradient(transparent,var(--clr-secondary));
-		 		border-radius: 6px;
-		 	}
+		p2{
+			font-family: 'IBM Plex Mono',monospace;
+						color: var(--clr-primary);
+			font-style: italic;
+		}
 
-		 	::-webkit-scrollbar-thumb:hover{
-		 		background: linear-gradient(transparent,#009900);
-		 		border-radius: 6px;
-		 	}
+		.impressum a{
+			color: var(--clr-secondary);
+		}
 
-		 	.header a{
-		 			text-decoration: none;
-		 			color: var(--clr-primary);
-		 	}
-
-		 	.header{
-		 		position: fixed;
-				top: 10px;
-		 		left: 10%;
-		 		right: 0;
-		 		will-change: transform;
-		 		z-index: 1000;
-		 	}
-
-			.column {
-				float: left;
-				width: 31%;
-				margin-top: 10px;
-				font-family: Now, Hiragion Kaku Gothic ProN, sans-serif;
-	 			font-size:15px;
-		 		line-height: 16px;
-		 		color: var(--clr-primary);
-		 	}
-
-			.header:after {
-				content: "";
-				display: table;
-				clear: both;
+		h1{
+			font-family: 'IBM Plex Mono',monospace;
+			color: var(--clr-primary);
+			font-weight: 400;
+			letter-spacing: 4px;
 			}
-
-			 .circle{
-			 	position: fixed;
-			 	width: 75px;
-				height: 75px;
-			 	filter: url(#wavy) blur(1px);
-			 	top: 8px;
-				right: 5%;
-				will-change: transform;
-		 		z-index: 1000;
-			 }
-
-			.circle:before{
-		 		content: '';
-		 		position: absolute;
-			 	top: 10px;
-			 	left: 10px;
-				right: 10px;
-				bottom: 10px;
-				border: 20px solid var(--clr-secondary);
-				box-shadow:
-		 					inset 0 0 50px var(--clr-secondary);
-			 	border-radius: 50%;
-			 	-webkit-box-reflect: below 10px linear-gradient(transparent,transparent,#0002);
-			 }
-
-			 .circle:after{
-				content: '';
-				position: absolute;
-				top: 10px;
-				left: 10px;
-				right: 10px;
-				bottom: 10px;
-				border: 20px solid var(--clr-secondary);
-				box-shadow: 0 0 13px var(--clr-secondary),
-							inset 0 0 20px var(--clr-secondary);
-				border-radius: 50%;	
-		 	}
-		 	
-			 	@keyframes animate{
-			 		0%
-			 		{
-			 			box-shadow: 0 0 5px var(--clr-secondary),
-			 					inset 0 0 5px var(--clr-secondary);
-			 				filter: hue-rotate(0deg);
-			 		}
-			 		20%
-			 		{
-			 			box-shadow: 0 0 6px var(--clr-secondary),
-			 					inset 0 0 6px var(--clr-secondary);
-			 		}
-			 		40%
-			 		{
-			 			box-shadow: 0 0 4px var(--clr-secondary),
-			 					inset 0 0 4px var(--clr-secondary);
-			 		}
-			 		60%
-			 		{
-			 			box-shadow: 0 0 8px var(--clr-secondary),
-			 					inset 0 0 8px var(--clr-secondary);
-			 		}
-			 		80%
-			 		{
-			 			box-shadow: 0 0 10px var(--clr-secondary),
-			 					inset 0 0 10px var(--clr-secondary);
-			 		}
-			 		100%
-			 		{
-			 			box-shadow: 0 0 5px var(--clr-secondary),
-			 					inset 0 0 5px var(--clr-secondary);
-			 				filter: hue-rotate(360deg);
-			 		}
-			 	}
-
-			 	svg{
-			 		width: 0;
-			 		height: 0;
-			 	}
-
-			 	.overlay{
-			 		position: absolute;
-			 		display: block;
-			 		width: 100%;
-			 		height: 100%;
-			 		cursor: pointer;
-			 		z-index: 1001;
-			 	}
-
-			 	.impressum{
-			 		width: 100%;
-			 		margin-top: 300px;
-			 		margin-bottom: 100px;
-			 		font-family: Now, Hiragion Kaku Gothic ProN, sans-serif;
-			 		font-size: 15px;
-			 		line-height: 1.5;
-			 		color: var(--clr-primary)
-			 	}
-
-			 	.impressum a{
-			 		text-decoration: none;
-			 		color: var(--clr-secondary);
-			 	}
-
-
-	:focus{
-		outline: none;
-	}			
-						
-	:root {
-	  --clr-light: #f2f3f4;
-	  --clr-dark: #000;
-	  --clr-primary: #f2f3f4;
-	  --clr-secondary: #30ff00;
-	  --clr-accent: #ccc;
-
-	  --background: var(--clr-dark);
-	  --foreground: var(--clr-light);
-
-	 --fill: #46008c;
-	}
-
-	.lightmode {
-	  --clr-light:#f2f3f4;
-	  --clr-dark: #000;
-	  --clr-primary: #000;
-	  --clr-secondary: #46008c;
-	  --clr-accent: #ccc;
-
-	 --background: var(--clr-light);
-	 --foreground: var(--clr-dark);
-
-	 --fill: #30ff00;
-	}
-
-	.switch{
-		position: fixed;
-	 	z-index: 1000;
-	 	bottom: 0.4em;
-	 	margin-left: 45%;
-	}
-
-	.switch p{
-		line-height: 0;
-		font-family: Now, Hiragion Kaku Gothic ProN, sans-serif;
-	 	font-size:13px;
-	 	color: var(--clr-primary);
-	}
-
-	.light-mode-toggle {
-	  color: var(--fill);
-	  border: 1px solid currentColor;
-	  background: transparent;
-	  cursor: pointer;
-	  border-radius: 27px;
-	  width: 27px;
-	  height: 27px;
-	}
-
-	.light-mode-toggle:hover {
-	  color: var(--fill);
-	  background-color: var(--fill);
-	}
-
-
-					@media screen and (max-width: 767px) {
-						.header{
-							position: absolute;	
-						}
-
-						.column {
-							width: 100%;
-						}
-
-						.column p{
-							margin-top: 10px;
-							margin-bottom: 10px;
-						}
-
-						.column2 {
-							width: 100%;
-						}
-					}
-					@media screen and (max-width:481px) {
-						.header{
-							position: absolute;	
-						}
-
-						.column {
-							width: 100%;
-						}
-
-						.column p{
-							margin-top: 10px;
-							margin-bottom: 10px;
-						}
-
-						.column2 {
-							width: 100%;
-						}
-					}
-					@media screen and (min-width: 1300px) {
-						.impressum{
-							width: 75%;
-						}
-					}
+		h2{
+			font-family: 'IBM Plex Mono',monospace;
+			font-weight: 400;
+			font-size: 20px;
+			color: var(--clr-primary);
+			letter-spacing: 4px;
+			}
 
 		</style>
 	</head>
 
 	<body>
 
-		 	<header class="header">
+		<header class="header">
 
-		 			<div class="column">
-		 				<p>Michaela Kappes<br>Germany</p>
-		 			</div>
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
+			</div>
 
-		 			<div class="column">
-		 				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
-		 			</div>
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
 
-		 			<div class="column">
-		 				<p>Explore<br><a href="/Portfolio/the-forbidden-garden.html" style="color: var(--clr-secondary);">the forbidden garden</a></p>
-		 			</div>
-		 		
-		 	</header>
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
 
-		 
+	 	</header>
+
+
 		 	<div class="circle" style="cursor: pointer;">
 		 		<a class="overlay" href="index.html" title="mika"></a>
 		 	</div>
@@ -305,11 +88,11 @@
 				<h1>Impressum</h1>
 				<p>Angaben gemäß § 5 TMG</p>
 
-				<p>Michaela Kappes <br> 
-				Am Schanzgraben 12<br> 
-				75031 Eppingen <br> 
+				<p>Michaela Kappes <br>
+				Am Schanzgraben 12<br>
+				75031 Eppingen <br>
 				</p>
-				
+
 				<p> <strong>Vertreten durch: </strong><br>
 				Michaela Kappes<br>
 				</p>
@@ -319,12 +102,12 @@
 				E-Mail: <a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.com</a></br></p>
 
 				<p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
-				Michaela Kappes <br> 
-				Am Schanzgraben 12<br> 
+				Michaela Kappes <br>
+				Am Schanzgraben 12<br>
 				75031 Eppingen <br></p>
-
-				<p><strong>Haftungsausschluss: </strong><br><br>
-					<strong>Haftung für Inhalte</strong><br><br>
+				<br><br>
+				<h2>Haftungsausschluss: </h2>
+					<p><strong>Haftung für Inhalte</strong><br><br>
 
 					Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br>
 
@@ -344,9 +127,9 @@
 					Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google Analytics verwendet sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.<br><br>
 
 					<strong>Google AdSense</strong><br><br>
-					Diese Website benutzt Google Adsense, einen Webanzeigendienst der Google Inc., USA (''Google''). Google Adsense verwendet sog. ''Cookies'' (Textdateien), die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Google Adsense verwendet auch sog. ''Web Beacons'' (kleine unsichtbare Grafiken) zur Sammlung von Informationen. Durch die Verwendung des Web Beacons können einfache Aktionen wie der Besucherverkehr auf der Webseite aufgezeichnet und gesammelt werden. Die durch den Cookie und/oder Web Beacon erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website im Hinblick auf die Anzeigen auszuwerten, um Reports über die Websiteaktivitäten und Anzeigen für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Das Speichern von Cookies auf Ihrer Festplatte und die Anzeige von Web Beacons können Sie verhindern, indem Sie in Ihren Browser-Einstellungen ''keine Cookies akzeptieren'' wählen (Im MS Internet-Explorer unter ''Extras > Internetoptionen > Datenschutz > Einstellung''; im Firefox unter ''Extras > Einstellungen > Datenschutz > Cookies''); wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p><br> 
+					Diese Website benutzt Google Adsense, einen Webanzeigendienst der Google Inc., USA (''Google''). Google Adsense verwendet sog. ''Cookies'' (Textdateien), die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Google Adsense verwendet auch sog. ''Web Beacons'' (kleine unsichtbare Grafiken) zur Sammlung von Informationen. Durch die Verwendung des Web Beacons können einfache Aktionen wie der Besucherverkehr auf der Webseite aufgezeichnet und gesammelt werden. Die durch den Cookie und/oder Web Beacon erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website im Hinblick auf die Anzeigen auszuwerten, um Reports über die Websiteaktivitäten und Anzeigen für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Das Speichern von Cookies auf Ihrer Festplatte und die Anzeige von Web Beacons können Sie verhindern, indem Sie in Ihren Browser-Einstellungen ''keine Cookies akzeptieren'' wählen (Im MS Internet-Explorer unter ''Extras > Internetoptionen > Datenschutz > Einstellung''; im Firefox unter ''Extras > Einstellungen > Datenschutz > Cookies''); wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p><br>
 
-					Website Impressum erstellt durch <a href="https://www.impressum-generator.de">impressum-generator.de</a> von der <a href="https://www.kanzlei-hasselbach.de/" rel="nofollow">Kanzlei Hasselbach</a>
+					<p2>Website Impressum erstellt durch <a href="https://www.impressum-generator.de">impressum-generator.de</a> von der <a href="https://www.kanzlei-hasselbach.de/" rel="nofollow">Kanzlei Hasselbach</a></p2>
 
 					<br><br><br><br>
 
@@ -354,33 +137,33 @@
 					<p><strong>Allgemeiner Hinweis und Pflichtinformationen</strong></p>
 					<p><strong>Benennung der verantwortlichen Stelle</strong></p>
 					<p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-					<p><span id="s3-t-firma">Name der Firma</span><br><span id="s3-t-ansprechpartner">Michaela Kappes</span><br><span id="s3-t-strasse">Am Schanzgraben 12</span><br><span id="s3-t-plz">75031</span> <span id="s3-t-ort">Eppingen</span></p><p></p>
-					<p>Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).</p>
+					<p><span id="s3-t-ansprechpartner">Michaela Kappes</span><br><span id="s3-t-strasse">Am Schanzgraben 12</span><br><span id="s3-t-plz">75031</span> <span id="s3-t-ort">Eppingen</span></p><p></p>
+					<p>Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).</p><br>
 
 					<p><strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong></p>
-					<p>Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+					<p>Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p><br>
 
 					<p><strong>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</strong></p>
-					<p>Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p>
+					<p>Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p><br>
 
 					<p><strong>Recht auf Datenübertragbarkeit</strong></p>
-					<p>Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+					<p>Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p><br>
 
 					<p><strong>Recht auf Auskunft, Berichtigung, Sperrung, Löschung</strong></p>
-					<p>Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.</p>
+					<p>Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.</p><br>
 
 					<p><strong>SSL- bzw. TLS-Verschlüsselung</strong></p>
-					<p>Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über diese Website übermitteln, für Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile.</p>
+					<p>Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über diese Website übermitteln, für Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile.</p><br>
 
 					<p><strong>Datenübermittlung bei Vertragsschluss für Warenkauf und Warenversand</strong></p>
 					<p>Personenbezogene Daten werden an Dritte nur übermittelt, sofern eine Notwendigkeit im Rahmen der Vertragsabwicklung besteht. Dritte können beispielsweise Bezahldienstleister oder Logistikunternehmen sein. Eine weitergehende Übermittlung der Daten findet nicht statt bzw. nur dann, wenn Sie dieser ausdrücklich zugestimmt haben.</p>
-					<p>Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.</p>
-					            
+					<p>Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.</p><br>
+
 					<p><strong>Kontaktformular</strong></p>
 					<p>Per Kontaktformular übermittelte Daten werden einschließlich Ihrer Kontaktdaten gespeichert, um Ihre Anfrage bearbeiten zu können oder um für Anschlussfragen bereitzustehen. Eine Weitergabe dieser Daten findet ohne Ihre Einwilligung nicht statt.</p>
 					<p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
-					<p>Über das Kontaktformular übermittelte Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder keine Notwendigkeit der Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen - insbesondere Aufbewahrungsfristen - bleiben unberührt.</p>
-					            
+					<p>Über das Kontaktformular übermittelte Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder keine Notwendigkeit der Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen - insbesondere Aufbewahrungsfristen - bleiben unberührt.</p><br>
+
 					<p><strong>Cookies</strong></p>
 					<p>Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. </p>
 					<p>Einige Cookies sind “Session-Cookies.” Solche Cookies werden nach Ende Ihrer Browser-Sitzung von selbst gelöscht. Hingegen bleiben andere Cookies auf Ihrem Endgerät bestehen, bis Sie diese selbst löschen. Solche Cookies helfen uns, Sie bei Rückkehr auf
@@ -389,67 +172,50 @@
 						kann eine eingeschränkte Funktionalität unserer Website zur Folge haben.</p>
 					<p>Das Setzen von Cookies, die zur Ausübung elektronischer Kommunikationsvorgänge oder der Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z.B. Warenkorb) notwendig sind, erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser
 						Website haben wir ein berechtigtes Interesse an der Speicherung von Cookies zur technisch fehlerfreien und reibungslosen Bereitstellung unserer Dienste. Sofern die Setzung anderer Cookies (z.B. für Analyse-Funktionen) erfolgt, werden diese in dieser
-						Datenschutzerklärung separat behandelt.</p>
-					            
+						Datenschutzerklärung separat behandelt.</p><br>
+
 					<p><strong>Google Analytics</strong></p>
 					<p>Unsere Website verwendet Funktionen des Webanalysedienstes Google Analytics. Anbieter des Webanalysedienstes ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
 					<p>Google Analytics verwendet "Cookies." Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert und eine Analyse der Website-Benutzung ermöglichen. Mittels Cookie erzeugte Informationen über Ihre Benutzung unserer Website
 						werden an einen Server von Google übermittelt und dort gespeichert. Server-Standort ist im Regelfall die USA.</p>
-					<p>Das Setzen von Google-Analytics-Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website haben wir  ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um unser Webangebot und ggf. auch Werbung zu optimieren.</p>
-					<p>IP-Anonymisierung</p>
+					<p>Das Setzen von Google-Analytics-Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website haben wir  ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um unser Webangebot und ggf. auch Werbung zu optimieren.</p><br>
+
+					<p><strong>IP-Anonymisierung</strong></p>
 					<p>Wir setzen Google Analytics in Verbindung mit der Funktion IP-Anonymisierung ein. Sie gewährleistet, dass Google Ihre IP-Adresse innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum
 						vor der Übermittlung in die USA kürzt. Es kann Ausnahmefälle geben, in denen Google die volle IP-Adresse an einen Server in den USA überträgt und dort kürzt. In unserem Auftrag wird Google diese Informationen benutzen, um Ihre Nutzung der Website
 						auszuwerten, um Reports über Websiteaktivitäten zu erstellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber uns zu erbringen. Es findet keine Zusammenführung der von Google Analytics übermittelten
-						IP-Adresse mit anderen Daten von Google statt.</p>
-					<p>Browser Plugin</p>
+						IP-Adresse mit anderen Daten von Google statt.</p><br>
+
+					<p><strong>Browser Plugin</strong></p>
 					<p>Das Setzen von Cookies durch Ihren Webbrowser ist verhinderbar. Einige Funktionen unserer Website könnten dadurch jedoch eingeschränkt werden. Ebenso können Sie die Erfassung von Daten bezüglich Ihrer Website-Nutzung einschließlich Ihrer IP-Adresse mitsamt
-						anschließender Verarbeitung durch Google unterbinden. Dies ist möglich, indem Sie das über folgenden Link erreichbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p>
-					<p>Widerspruch gegen die Datenerfassung</p>
+						anschließender Verarbeitung durch Google unterbinden. Dies ist möglich, indem Sie das über folgenden Link erreichbare Browser-Plugin herunterladen und installieren: <a href="https://tools.google.com/dlpage/gaoptout?hl=de">https://tools.google.com/dlpage/gaoptout?hl=de</a>.</p><br>
+
+					<p><strong>Widerspruch gegen die Datenerfassung</strong></p>
 					<p>Sie können die Erfassung Ihrer Daten durch Google Analytics verhindern, indem Sie auf folgenden Link klicken. Es wird ein Opt-Out-Cookie gesetzt, der die Erfassung Ihrer Daten bei zukünftigen Besuchen unserer Website verhindert: Google Analytics deaktivieren.</p>
 					<p>Einzelheiten zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google: <a href="https://support.google.com/analytics/answer/6004245?hl=de">https://support.google.com/analytics/answer/6004245?hl=de</a>.</p>
 					<p>Auftragsverarbeitung</p>
-					<p>Zur vollständigen Erfüllung der gesetzlichen Datenschutzvorgaben haben wir mit Google einen Vertrag über die Auftragsverarbeitung abgeschlossen.</p>
-					<p>Demografische Merkmale bei Google Analytics</p>
-					<p>Unsere Website verwendet die Funktion “demografische Merkmale” von Google Analytics. Mit ihr lassen sich Berichte erstellen, die Aussagen zu Alter, Geschlecht und Interessen der Seitenbesucher enthalten. Diese Daten stammen aus interessenbezogener Werbung
-						von Google sowie aus Besucherdaten von Drittanbietern. Eine Zuordnung der Daten zu einer bestimmten Person ist nicht möglich. Sie können diese Funktion jederzeit deaktivieren. Dies ist über die Anzeigeneinstellungen in Ihrem Google-Konto möglich oder
-						indem Sie die Erfassung Ihrer Daten durch Google Analytics, wie im Punkt “Widerspruch gegen die Datenerfassung” erläutert, generell untersagen.</p>
-					            
-					<p><strong>XING Plugin</strong></p>
-					<p>Unsere Website verwendet Funktionen des Netzwerks XING. Anbieter ist die XING AG, Dammtorstraße 29-32, 20354 Hamburg, Deutschland.</p>
-					<p>Bei Aufruf einer Seite mit integrierten Xing-Funktionen wird eine Verbindung zu den Servern von Xing hergestellt. Eine Speicherung personenbezogener Daten erfolgt dabei nach unserem Kenntnisstand nicht. IP-Adressen werden nicht gespeichert, ebenso erfolgt
-						keine Auswertung des Nutzungsverhaltens.</p>
-					<p>Einzelheiten zum Datenschutz und dem XING Share-Button finden Sie in der Datenschutzerklärung von XING unter: <a href="https://www.xing.com/app/share?op=data_protection">https://www.xing.com/app/share?op=data_protection</a>.</p>
-					            
-					<p><strong>Twitter Plugin</strong></p>
-					<p>Unsere Website vewendet Funktionen des Dienstes Twitter. Anbieter ist die Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA. </p>
-					<p>Bei Nutzung von Twitter und der Funktion "Re-Tweet" werden von Ihnen besuchte Websites mit Ihrem Twitter-Account verknüpft und in Ihrem Twitter-Feed veröffentlicht. Dabei erfolgt eine Übermittlung von Daten an Twitter. Über den Inhalt der übermittelten
-						Daten sowie die Nutzung dieser Daten durch Twitter haben wir keine Kenntnis. Einzelheiten finden Sie in der Datenschutzerklärung von Twitter: <a href="https://twitter.com/privacy">https://twitter.com/privacy</a>.</p>
-					<p>Sie können Ihre Datenschutzeinstellungen bei Twitter ändern: <a href="https://twitter.com/account/settings">https://twitter.com/account/settings</a></p>
-					            
-					<p><strong>Pinterest Plugin</strong></p>
-					<p>Unserer Website verwendet Funktionen des sozialen Netzwerkes Pinterest. Anbieter ist die Pinterest Inc., 808 Brannan Street, San Francisco, CA 94103-490, USA.</p>
-					<p>Bei Aufruf einer Seite mit Funktionen von Pinterest, stellt Ihr Browser eine direkte Verbindung zu den Pinterest-Servern her. Es werden Protokolldaten an die Server von Pinterest übermittelt. Standort der Server sind die USA. Die Protokolldaten können
-						möglicherweise Rückschlüsse auf Ihre IP-Adresse, besuchte Websites, Art und Einstellungen des Browsers, Datum und Zeitpunkt der Anfrage, Ihre Verwendungsweise von Pinterest sowie Cookies zulassen.</p>
-					<p>Einzelheiten hierzu finden Sie in den Datenschutzhinweisen von Pinterest: <a href="https://about.pinterest.com/de/privacy-policy">https://about.pinterest.com/de/privacy-policy</a>.</p>
-					            
+					<p>Zur vollständigen Erfüllung der gesetzlichen Datenschutzvorgaben haben wir mit Google einen Vertrag über die Auftragsverarbeitung abgeschlossen.</p><br>
+
 					<p><strong>Google Web Fonts</strong></p>
 					<p>Unsere Website verwendet Web Fonts von Google. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
 					<p>Durch den Einsatz dieser Web Fonts wird es möglich Ihnen die von uns gewünschte Darstellung unserer Website zu präsentieren, unabhängig davon welche Schriften Ihnen lokal zur Verfügung stehen. Dies erfolgt über den Abruf der Google Web Fonts von einem Server von Google in den USA und der damit verbundenen Weitergabe Ihre Daten an Google. Dabei handelt es sich um Ihre IP-Adresse und welche Seite Sie bei uns besucht haben. Der Einsatz von Google Web Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website haben wir ein berechtigtes Interesse an der optimalen Darstellung und Übertragung unseres Webauftritts.</p>
 					<p>Das Unternehmen Google ist für das us-europäische Datenschutzübereinkommen "Privacy Shield" zertifiziert. Dieses Datenschutzübereinkommen soll die Einhaltung des in der EU geltenden Datenschutzniveaus gewährleisten.</p>
 					<p>Einzelheiten über Google Web Fonts finden Sie unter: <a href="https://www.google.com/fonts#AboutPlace:about">https://www.google.com/fonts#AboutPlace:about</a> und weitere Informationen in den Datenschutzbestimmungen von Google: <a href="https://policies.google.com/privacy/partners?hl=de">https://policies.google.com/privacy/partners?hl=de</a></p>
-				     <p><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
+				     <p2>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de </a></p2>
 			 </div>
 
-			 <div class="switch">	
-				<p> solar </p>
-					<button id="light-mode-toggle" class="light-mode-toggle"></button>
-				<p> lunar </p>
-			</div>
+			 <section class="switch-light">
+	 			<div class="switch">
+	 				<p> solar </p>
+	 					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+	 				<p> lunar </p>
+	 			</div>
+	 		</section>
 
 
 		<script>
         	// check for saved 'lightMode' in localStorage
-			let lightMode = localStorage.getItem('lightMode'); 
+			let lightMode = localStorage.getItem('lightMode');
 
 			const lightModeToggle = document.querySelector('#light-mode-toggle');
 
@@ -463,10 +229,10 @@
 			const disableLightMode = () => {
 			  // 1. Remove the class from the body
 			  document.body.classList.remove('lightmode');
-			  // 2. Update lightMode in localStorage 
+			  // 2. Update lightMode in localStorage
 			  localStorage.setItem('lightMode', null);
 			}
-			 
+
 			// If the user already visited and enabled lightMode
 			// start things off with it on
 			if (lightMode === 'enabled') {
@@ -476,14 +242,14 @@
 			// When someone clicks the button
 			lightModeToggle.addEventListener('click', () => {
 			  // get their lightMode setting
-			  lightMode = localStorage.getItem('lightMode'); 
-			  
+			  lightMode = localStorage.getItem('lightMode');
+
 			  // if it not current enabled, enable it
 			  if (lightMode !== 'enabled') {
 			    enableLightMode();
-			  // if it has been enabled, turn it off  
-			  } else {  
-			    disableLightMode(); 
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
 			  }
 			});
         </script>

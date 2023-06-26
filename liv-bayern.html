@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>liv-bayern</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+				<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+				<link rel="stylesheet" href="stylesheet/style.css" charset="utf-8">
+
+
+	</head>
+
+<body>
+		<header class="header">
+
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
+			</div>
+
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
+
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
+
+		</header>
+
+<!--CIRCLE-->
+	 	<div class="circle" style="cursor: pointer;">
+	 		<a class="overlay" href="index.html" title="mika"></a>
+	 	</div>
+
+		<svg>
+			<filter id="wavy">
+				<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+					<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+				</feTurbulence>
+				<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+			</filter>
+		</svg>
+
+<!--BACKGROUND-->
+		<div  class="title">
+			<h4>APP DESIGN</h4>
+		</div>
+
+<!--INHALT-->
+
+		 <section class="first">
+		 			<img class="img-first" src="Projects-Images\05-LIV-App\LIV-Mockup-01.jpg" alt="transparent page">
+			</section>
+
+<div class="row">
+		<div class="column left" id="text-body-first">
+				<h2>LIV-BAYERN</h2>
+				<p>Our task was to develop an app for the Landesinnungsverband der Zimmerer Bayern (LIV) as part of the Interface Design II module.
+						Mr. Kai Gajewski from the LIV makes the first important (customer) wishes clear,
+						which will accompany us throughout the entire conception, design and realization process.
+						The structure of the app to be developed should be based on the existing public website of
+						the LIV and its content in combination with the internal, password-protected part of the site
+						should be transferred into a coherent, user-oriented app design.
+				<br></p>
+		</div>
+		<div class="column right" id="side-text-first">
+				<p>
+					Client
+						<br>LIV–Bayern<br><br>
+					Credits
+						<br>Michaela Kappes
+						<br>Katharina Lutz
+						<br>Robin Fritzsche<br><br>
+					Year
+						<br>2022 – 6th Semester
+				</p>
+		</div>
+</div>
+
+
+<!--zick zack pictures-->
+		<section class="second">
+
+		 	<div class="img-box">
+		 		<img class="img2" src="Projects-Images\05-LIV-App\Konzept.jpg" alt="cover front">
+		 		<img src="Projects-Images\05-LIV-App\Adjektive.jpg" alt="transparent page">
+				<img class="img4" src="Projects-Images\05-LIV-App\Farbe.jpg" alt="content page">
+			</div>
+
+			<div class="description-1">
+				<h3>»WIR BAUEN EINE […] [APP],
+							WIE SIE EUCH GEFÄLLT.« <br></h3>
+					<p>The challenge for us is to develop an app with the characteristics of overview, completeness,
+						personalization and flexibility, which at the same time visualizes the goals and values of the
+						LIV of Carpenters Bavaria, for a multi-layered target group against the background of the customer
+						briefing and the high complexity of the website.<br><br></p>
+		 	</div>
+
+		 	<div class="img-box">
+				<img class="img5" src="Projects-Images\05-LIV-App\LIV-Mockup-03.jpg" alt="history, timeline">
+				<img src="Projects-Images\05-LIV-App\LIV-Mockup-04.jpg" alt="font weights">
+				<img class="img2" src="Projects-Images\05-LIV-App\LIV-Mockup-02.jpg" alt="cover front">
+		 		<img class="img7" src="Projects-Images\05-LIV-App\Übersicht01.jpg" alt="monotype picture">
+
+			</div>
+
+		</section>
+
+		<section class="switch-light">
+			<div class="switch">
+				<p> solar </p>
+					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+				<p> lunar </p>
+			</div>
+		</section>
+
+
+
+		<script>
+        	// check for saved 'lightMode' in localStorage
+			let lightMode = localStorage.getItem('lightMode');
+
+			const lightModeToggle = document.querySelector('#light-mode-toggle');
+
+			const enableLightMode = () => {
+			  // 1. Add the class to the body
+			  document.body.classList.add('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', 'enabled');
+			}
+
+			const disableLightMode = () => {
+			  // 1. Remove the class from the body
+			  document.body.classList.remove('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', null);
+			}
+
+			// If the user already visited and enabled lightMode
+			// start things off with it on
+			if (lightMode === 'enabled') {
+			  enableLightMode();
+			}
+
+			// When someone clicks the button
+			lightModeToggle.addEventListener('click', () => {
+			  // get their lightMode setting
+			  lightMode = localStorage.getItem('lightMode');
+
+			  // if it not current enabled, enable it
+			  if (lightMode !== 'enabled') {
+			    enableLightMode();
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
+			  }
+			});
+        </script>
+	</body>
+</html>

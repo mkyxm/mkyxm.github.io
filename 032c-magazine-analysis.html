@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+		<title>032cMagAn</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+				<link rel="stylesheet" href="stylesheet/style.css" charset="utf-8">
+
+
+	</head>
+
+<body>
+		<header class="header">
+
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
+			</div>
+
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
+
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
+
+		</header>
+
+<!--CIRCLE-->
+	 	<div class="circle" style="cursor: pointer;">
+	 		<a class="overlay" href="index.html" title="mika"></a>
+	 	</div>
+
+		<svg>
+			<filter id="wavy">
+				<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+					<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+				</feTurbulence>
+				<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+			</filter>
+		</svg>
+
+<!--BACKGROUND-->
+		<div  class="title">
+			<h4>EDITORIAL DESIGN AND<br> MAGAZINE ANALYSIS</h4>
+		</div>
+
+<!--INHALT-->
+
+		 <section class="first">
+		 			<img class="img-first" src="Projects-Images\01-032c\Free_Book_Mockup_12.png" alt="transparent page">
+			</section>
+
+<div class="row">
+		<div class="column left" id="text-body-first">
+				<h2>032c Magazine Analysis</h2>
+				<p> This Work analyses the 032c Magazine. Concise design elements are reproduced.<br>
+						Founded in Berlin in 2000, 032c Magazine is edited by Joerg Koch and art directed by Mike Meiré.
+<br></p>
+		</div>
+		<div class="column right" id="side-text-first">
+				<p>
+					Client
+						<br>University Project<br><br>
+					Credits
+						<br>Celina Hofmann
+						<br>Michaela Kappes
+						<br>Katharina Lutz<br><br>
+					Year
+						<br>2021 – 3rd Semester
+				</p>
+		</div>
+</div>
+
+
+<!--zick zack pictures-->
+		<section class="second">
+
+		 	<div class="img-box">
+				<img src="Projects-Images\01-032c\impressum (2).png" alt="cover white">
+		 		<img class="img2" src="Projects-Images\01-032c\031c-RedFrame.jpg" alt="cover front">
+				<img src="Projects-Images\01-032c\red.png" alt="cover white">
+				<img src="Projects-Images\01-032c\032c-Zielgruppe.jpg" alt="font weights">
+				<img src="Projects-Images\01-032c\02c-kathi.jpg" alt="font weights">
+				<img src="Projects-Images\01-032c\miké.png" alt="alphabet">
+		 	</div>
+
+			<div class="description-1">
+				<h3>MIKE MEIRÉ<br></h3>
+					<p>An artist, designer, art director, and curator, Mike Meiré is considered a leading protagonist of cutting-edge editorial design,
+						he has worked for various magazines, including brand eins, Arch+, 032c, Neue Zürcher Zeitung, Interview Magazine and GQ Italia.
+						Together with his brother he has been running an agency Meiré und Meiré since 1987.<br><br></p>
+		 	</div>
+
+		 	<div class="img-box">
+		 		<img class="img7" src="Projects-Images\01-032c\ad.png" alt="monotype picture">
+				<img src="Projects-Images\01-032c\032-money.jpg" alt="transparent page">
+		 		<img src="Projects-Images\01-032c\fett.png" alt="analysis">
+		 		<img class="img7" src="Projects-Images\01-032c\Free_Book_Mockup_7.png" alt="font weight (2)">
+		 		<img class="img6" src="Projects-Images\01-032c\hugo.png" alt="glyphs">
+				<img class="img7" src="Projects-Images\01-032c\mika.png" alt="font weight (2)">
+				<img class="img7" src="Projects-Images\01-032c\mittelfinger.png" alt="monotype picture">
+			</div>
+
+		</section>
+
+		<section class="switch-light">
+			<div class="switch">
+				<p> solar </p>
+					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+				<p> lunar </p>
+			</div>
+		</section>
+
+
+
+		<script>
+        	// check for saved 'lightMode' in localStorage
+			let lightMode = localStorage.getItem('lightMode');
+
+			const lightModeToggle = document.querySelector('#light-mode-toggle');
+
+			const enableLightMode = () => {
+			  // 1. Add the class to the body
+			  document.body.classList.add('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', 'enabled');
+			}
+
+			const disableLightMode = () => {
+			  // 1. Remove the class from the body
+			  document.body.classList.remove('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', null);
+			}
+
+			// If the user already visited and enabled lightMode
+			// start things off with it on
+			if (lightMode === 'enabled') {
+			  enableLightMode();
+			}
+
+			// When someone clicks the button
+			lightModeToggle.addEventListener('click', () => {
+			  // get their lightMode setting
+			  lightMode = localStorage.getItem('lightMode');
+
+			  // if it not current enabled, enable it
+			  if (lightMode !== 'enabled') {
+			    enableLightMode();
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
+			  }
+			});
+        </script>
+	</body>
+</html>

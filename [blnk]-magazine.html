@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.typekit.net/zlx0qtl.css">
+		<title>[blnk]]</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBP+Plex+Mono">
+				<link rel="stylesheet" href="stylesheet/style.css" charset="utf-8">
+
+
+	</head>
+
+<body>
+		<header class="header">
+
+			<div class="header-column" id="header-column-1">
+				<p>Michaela Kappes<br>aka mika</p>
+			</div>
+
+			<div class="header-column" id="header-column-2">
+				<p>Contact<br><a href='mailto:kappes.michaela@gmx.com'>kappes.michaela@gmx.de</a></p>
+			</div>
+
+			<div class="header-column" id="header-column-3">
+				<p>Explore<br><a href="the-forbidden-garden.html" title="the forbidden garden" style="color: var(--clr-secondary);">the forbidden garden</a></p>
+			</div>
+
+		</header>
+
+<!--CIRCLE-->
+	 	<div class="circle" style="cursor: pointer;">
+	 		<a class="overlay" href="index.html" title="mika"></a>
+	 	</div>
+
+		<svg>
+			<filter id="wavy">
+				<feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+					<animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+				</feTurbulence>
+				<feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+			</filter>
+		</svg>
+
+<!--BACKGROUND-->
+		<div  class="title">
+			<h4>EFIRST ISSUE<br>MAGAZINE</h4>
+		</div>
+
+<!--INHALT-->
+
+		 <section class="first">
+		 			<img class="img-first" src="Projects-Images\02-[blnk]\coverfull.jpg" alt="transparent page">
+			</section>
+
+<div class="row">
+		<div class="column left" id="text-body-first">
+				<h2>[blnk]</h2>
+				<p>[blnk] is the zero issue of the magazine all about the future of design, lifestyle, fashion and architecture.
+					The name [blnk], which is derived from the English "blank" and means "empty", refers to the future that needs to
+					be shaped, the story(s) that first need to be written. The text design, for example, is oriented to the content,
+					so text blocks in the architecture section reflect building structures, while three-dimensional words refer to
+					three-dimensional digital art or sculptures. To counter habits, there are also contributions that have to be rotated
+					by 90°. They make the reader see the content haptically as well as visually from a different angle.</p>
+		</div>
+		<div class="column right" id="side-text-first">
+			<p>Client<br>
+				University Project<br>
+				<br>
+				Credits<br>
+				Celina Hofmann
+				<br>Michaela Kappes
+				<br>Katharina Lutz<br>
+				<br>
+				Year<br>2021 – 3rd Semester</p>
+		</div>
+</div>
+
+
+<!--zick zack pictures-->
+		<section class="second">
+
+		 	<div class="img-box">
+				<img src="Projects-Images\02-[blnk]\blnk-inhalt.jpg" alt="transparent page">
+				<img src="Projects-Images\02-[blnk]\blnk.white.jpg" alt="font weights">
+				<img src="Projects-Images\02-[blnk]\Magazin Innenseite 1.jpg" alt="cover white">
+		 		<img src="Projects-Images\02-[blnk]\Innenseite 6.jpg" alt="analysis">
+
+		 	</div>
+
+			<div class="description-1">
+				<p>The square brackets become a design feature of the magazine, are already an element of the cover and underline
+					the focus on the not-yet-final of what is to come. Creative, active and individual, using new ideas, clear standpoints
+					 & principles for a better future - these are the main values of the independent magazine. These basic ideas are reflected
+					 in its design and language, which often deliberately breaks with traditional creative means without completely losing
+					  its reference to an order or even becoming an end in itself.
+				</p>
+		 	</div>
+
+		 	<div class="img-box">
+		 		<img class="img7" src="Projects-Images\02-[blnk]\Innenseite 7.jpg" alt="font weight (2)">
+		 		<img src="Projects-Images\02-[blnk]\Innenseite 9.jpg" alt="alphabet">
+		 		<img src="Projects-Images\02-[blnk]\Tomas.jpg" alt="cover white">
+				<img class="img7" src="Projects-Images\02-[blnk]\Innenseite 5.jpg" alt="monotype picture">
+				<img class="img4" src="Projects-Images\02-[blnk]\blnk-loveMeDaddy.jpg" alt="content page">
+				<img class="img6" src="Projects-Images\02-[blnk]\Magazin Cover Mockup.jpg" alt="glyphs">
+			</div>
+
+		</section>
+
+		<section class="switch-light">
+			<div class="switch">
+				<p> solar </p>
+					<button id="light-mode-toggle" class="light-mode-toggle"></button>
+				<p> lunar </p>
+			</div>
+		</section>
+
+
+
+		<script>
+        	// check for saved 'lightMode' in localStorage
+			let lightMode = localStorage.getItem('lightMode');
+
+			const lightModeToggle = document.querySelector('#light-mode-toggle');
+
+			const enableLightMode = () => {
+			  // 1. Add the class to the body
+			  document.body.classList.add('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', 'enabled');
+			}
+
+			const disableLightMode = () => {
+			  // 1. Remove the class from the body
+			  document.body.classList.remove('lightmode');
+			  // 2. Update lightMode in localStorage
+			  localStorage.setItem('lightMode', null);
+			}
+
+			// If the user already visited and enabled lightMode
+			// start things off with it on
+			if (lightMode === 'enabled') {
+			  enableLightMode();
+			}
+
+			// When someone clicks the button
+			lightModeToggle.addEventListener('click', () => {
+			  // get their lightMode setting
+			  lightMode = localStorage.getItem('lightMode');
+
+			  // if it not current enabled, enable it
+			  if (lightMode !== 'enabled') {
+			    enableLightMode();
+			  // if it has been enabled, turn it off
+			  } else {
+			    disableLightMode();
+			  }
+			});
+        </script>
+	</body>
+</html>
